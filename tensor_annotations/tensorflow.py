@@ -37,8 +37,12 @@ A4 = TypeVar('A4', bound=axes.Axis)
 class Tensor0:
   """A scalar - produced by e.g. tf.reduce_sum(tf.zeros((2, 3)))."""
 
+  #def __init_subclass__(cls):
+  #    pass
+    
   def __new__(cls, *args, **kwargs):
     raise TypeError('tensor_annotations tensors should not be instantiated')
+    pass
 
   # These are necessary so that type checkers know we have these methods.
   __abs__: Any
@@ -59,6 +63,8 @@ class Tensor0:
   __truediv__: Any
   shape: Any
 
+  #def test(cls):
+  #    cls.x
 
 class Tensor1(Generic[A1]):
   """A tensor of rank 1."""
@@ -124,7 +130,7 @@ class Tensor3(Generic[A3, A2, A1]):
 
   # These are necessary so that type checkers know we have these methods.
   __abs__: Any
-  __add__: Any
+  j_add__: Any
   __add__: Any
   __floordiv__: Any
   __getitem__: Any
