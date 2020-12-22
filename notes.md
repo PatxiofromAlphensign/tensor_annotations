@@ -2,4 +2,4 @@
 -----
 #### todo
 
-- fix ![test.py](./test.py), so for *tensorannotations*, classes `TensorN` work
+- fix [test.py](./test.py), so for *tensorannotations*, classes `TensorN` work
