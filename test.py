@@ -1,15 +1,15 @@
 #### ============================ ####
 # terrible design thanks to ME / arindam chow
+# this is really dumb as to how unnecessarily complicated this has begun to be, i will shink it down TODO
+#### ============================ ####
 
 from tensor_annotations.tensorflow import Tensor1, Tensor0
 
 def globalize(f):
     global dic, tensor0
-    dic = {"x":int, "y":float}
-    def new(type_, **dic1):
-        x,y = dic1
-        tensor0 =Tensor0[dic1[x]]
-        return f(tensor0, dic)
+    def new(type_, **dic):
+        x,y = dic
+        return f(type_, **dic)
     return new    
 
 class d_tensor(Tensor0):
@@ -26,12 +26,12 @@ class d_tensor1(object):
     
     # TODO expand the tensor classes 
     @globalize
-    def main(type_,dic):
+    def main(type_,**dic):
         d_t = d_tensor(type_)
         return d_t.A1
 
     def __init__(self, **dic):
-        self.t0 = d_tensor1.main(int, **dic)
+        self.t0 = d_tensor1.main(float, **dic)
         
 
 def run():
